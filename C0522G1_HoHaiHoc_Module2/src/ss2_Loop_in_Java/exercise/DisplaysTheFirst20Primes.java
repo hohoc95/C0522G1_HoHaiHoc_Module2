@@ -6,9 +6,9 @@ public class DisplaysTheFirst20Primes {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Số lượng số lượng số nguyên tố cần in ra: ");
-
+        System.out.print("Nhập vào số lượng số lượng số nguyên tố cần in ra: ");
         int number = scanner.nextInt();
+
         int count = 0;
         int prime = 2;
         while (count < number) {
@@ -20,7 +20,7 @@ public class DisplaysTheFirst20Primes {
                 }
             }
             if (isPrime) {
-                System.out.print(prime + ", ");
+                System.out.print(prime + "     ");
                 count++;
             }
             prime++;

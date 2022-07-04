@@ -35,7 +35,7 @@ public class DisplayTypesOfGeometry {
                     System.out.print("Input height: ");
                     int height = scanner.nextInt();
 
-                    System.out.println("\nBotton-left: ");
+                    System.out.println("\nBotton left: ");
                     for (int i = 0; i < height; i++) {
                         for (int j = 0; j <= i; j++) {
                             System.out.print("*");
@@ -43,7 +43,7 @@ public class DisplayTypesOfGeometry {
                         System.out.println();
                     }
 
-                    System.out.println("\nTop-left: ");
+                    System.out.println("\nTop left: ");
                     for (int i = 0; i < height; i++) {
                         for (int j = 0; j < height - i; j++) {
                             System.out.print("*");
@@ -51,7 +51,7 @@ public class DisplayTypesOfGeometry {
                         System.out.println();
                     }
 
-                    System.out.println("\nTop-right: ");
+                    System.out.println("\nTop right: ");
                     for (int i = 0; i < height; i++) {
                         for (int j = 0; j < height; j++) {
                             if (j < i) {
@@ -63,7 +63,7 @@ public class DisplayTypesOfGeometry {
                         System.out.println();
                     }
 
-                    System.out.println("\nBotton-right: ");
+                    System.out.println("\nBotton right: ");
                     for (int i = 0; i < height; i++) {
                         for (int j = 0; j < height; j++) {
                             if (j < height - i - 1) {
