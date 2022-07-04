@@ -20,6 +20,7 @@ public class DisplayTypesOfGeometry {
                     System.out.println("\nPrint the rectangle");
                     System.out.print("Input length: ");
                     int length = scanner.nextInt();
+
                     System.out.print("Input width: ");
                     int width = scanner.nextInt();
 
@@ -30,6 +31,7 @@ public class DisplayTypesOfGeometry {
                         System.out.println();
                     }
                     break;
+
                 case 2:
                     System.out.println("\nPrint the square triangle");
                     System.out.print("Input height: ");
@@ -75,6 +77,7 @@ public class DisplayTypesOfGeometry {
                         System.out.println();
                     }
                     break;
+
                 case 3:
                     System.out.println("\nPrint isosceles triangle");
                     System.out.print("Input height: ");
