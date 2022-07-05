@@ -13,7 +13,7 @@ public class MaxElement2DArray {
 
         System.out.print("Nhập cột: ");
         int col = scanner.nextInt();
-        
+
         int[][] matrix = new int[col][row];
 
         for (int i = 0; i < row; i++) {
