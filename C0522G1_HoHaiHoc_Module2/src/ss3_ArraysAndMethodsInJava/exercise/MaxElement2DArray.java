@@ -23,7 +23,7 @@ public class MaxElement2DArray {
         }
 
         int max = matrix[0][0];
-        System.out.println("The matrix is: ");
+        System.out.println("Ma trận vừa nhập: ");
 
         for (int i = 0; i < matrix.length; i++) {
             System.out.println();
