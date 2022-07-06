@@ -3,6 +3,8 @@ package ss4_ClassesAndObjectsInJava.exercise.exercise2;
 import java.util.Date;
 
 public class StopWatch {
+
+    //Trường startTime và endTime là private với phương thức getter để trả về giá trị của startTime và endTime.
     private Date startTime, endTime;
 
     StopWatch() {

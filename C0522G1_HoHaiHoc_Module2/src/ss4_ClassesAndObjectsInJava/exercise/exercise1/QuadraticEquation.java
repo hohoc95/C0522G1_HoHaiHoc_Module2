@@ -29,7 +29,7 @@ public class QuadraticEquation {
     }
 
     public String display() {
-        return "Phương trình bậc 2: " + getNumberA() + "*X^2 + " + getNumberB() + "*X + " + getNumberC() + " = 0";
+        return "Phương trình bậc 2: " + getNumberA() + "x^2 + " + getNumberB() + "x + " + getNumberC() + " = 0";
     }
     //Trả về delta theo công thức delta = b2 - 4ac.
 
@@ -40,11 +40,11 @@ public class QuadraticEquation {
     //Phương thức getRoot1() và getRoot2() trả về 2 nghiệm của phương trình
 
     public double getRoot1() {
-        return (-getNumberB() + Math.sqrt(getDelta())) / (2 * getNumberA());
+        return (- getNumberB() + Math.sqrt(getDelta())) / (2 * getNumberA());
     }
 
     public double getRoot2() {
-        return (-getNumberB() - Math.sqrt(getDelta())) / (2 * getNumberA());
+        return (- getNumberB() - Math.sqrt(getDelta())) / (2 * getNumberA());
     }
 
     public String viewResult() {
@@ -53,10 +53,10 @@ public class QuadraticEquation {
         }
 
         if (getDelta() == 0) {
-            return "Phương trình có nghiệm kép: X1 = X2 = " + getRoot1();
+            return "Phương trình có nghiệm kép: x1 = x2 = " + getRoot1();
         }
 
-        return "Phương trình có 2 nghiệm phân biệt: X1 = " + getRoot1() + " and X2 = " + getRoot2();
+        return "Phương trình có 2 nghiệm phân biệt: x1 = " + getRoot1() + " và x2 = " + getRoot2();
     }
 
 
