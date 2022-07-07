@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class QuadraticEquation {
 
-    double numberA, numberB, numberC;
+    double numberA;
+    double numberB;
+    double numberC;
 
     //Trường dữ liệu a, b, và c thuộc kiểu private double đại diện cho 3 hệ số.
 
