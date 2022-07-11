@@ -17,7 +17,7 @@ public class Main {
 
             if(shape instanceof Circle){
                 Shape shape1 = (Circle) shape;
-                System.out.println(shape1.resize(20));
+                System.out.println(shape1.resize(10));
             }
         }
     }
