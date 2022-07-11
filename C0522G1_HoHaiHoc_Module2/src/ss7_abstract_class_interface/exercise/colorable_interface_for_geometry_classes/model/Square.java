@@ -31,7 +31,7 @@ public class Square extends Shape implements Colorable {
 
     @Override
     public String toString() {
-        return "A Shape with color of "
+        return "A Square with color of "
                 + getColor()
                 + " and "
                 + " area is " + getArea()
