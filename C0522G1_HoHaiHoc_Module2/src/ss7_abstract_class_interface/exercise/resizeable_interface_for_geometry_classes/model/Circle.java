@@ -2,7 +2,7 @@ package ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_
 
 import ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_classes.service.Resizeable;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Shape {
     private double radius = 1.0;
 
     public Circle() {

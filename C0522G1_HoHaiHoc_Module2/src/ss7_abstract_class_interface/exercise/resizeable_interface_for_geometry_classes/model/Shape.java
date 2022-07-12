@@ -30,7 +30,13 @@ public abstract class Shape implements Resizeable {
         this.filled = filled;
     }
 
+//    public abstract double getArea()
+
     @Override
+    public double resize(double pencent) {
+        return 0;
+    }
+
     public String toString() {
         return "A Shape with color of "
                 + getColor()
@@ -38,6 +44,4 @@ public abstract class Shape implements Resizeable {
                 + (isFilled() ? "filled" : "not filled");
     }
 
-    @Override
-    public abstract double resize(double pencent) ;
 }

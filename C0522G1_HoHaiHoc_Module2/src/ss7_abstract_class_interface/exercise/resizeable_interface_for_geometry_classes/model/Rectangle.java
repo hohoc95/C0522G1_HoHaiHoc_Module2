@@ -2,12 +2,13 @@ package ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_
 
 import ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_classes.service.Resizeable;
 
-public class Rectangle extends Shape implements Resizeable {
+public class Rectangle extends Shape {
     private double width = 1.0;
     private double length = 1.0;
 
     public Rectangle() {
     }
+
 
     public Rectangle(double width, double length) {
         this.width = width;
@@ -54,10 +55,18 @@ public class Rectangle extends Shape implements Resizeable {
                 + super.toString();
     }
 
+
     @Override
     public double resize(double pencent) {
         setWidth(getWidth() + getWidth() * pencent / 100);
         setLength(getLength() + getLength() * pencent / 100);
         return getArea();
     }
+
+//    @Override
+//    public double resize(double pencent) {
+//        setWidth(getWidth() + getWidth() * pencent / 100);
+//        setLength(getLength() + getLength() * pencent / 100);
+//        return getArea();
+//    }
 }

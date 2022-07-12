@@ -2,7 +2,7 @@ package ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_
 
 import ss7_abstract_class_interface.exercise.resizeable_interface_for_geometry_classes.service.Resizeable;
 
-public class Square extends Shape implements Resizeable {
+public class Square extends Shape  {
     private double edge = 1.0;
 
     public Square() {
