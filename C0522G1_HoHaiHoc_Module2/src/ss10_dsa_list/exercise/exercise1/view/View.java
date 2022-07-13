@@ -15,6 +15,7 @@ public class View {
 
 
 
+
         MyList<Student> studentMyList = new MyList<>();
         studentMyList.add(student1);
         studentMyList.add(student2);
