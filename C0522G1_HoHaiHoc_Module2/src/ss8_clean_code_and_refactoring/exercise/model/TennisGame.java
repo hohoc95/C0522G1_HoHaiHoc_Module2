@@ -1,7 +1,6 @@
 package ss8_clean_code_and_refactoring.exercise.model;
 
 public class TennisGame {
-
     private static final int LOVE = 0;
     private static final int FIFTEEN = 1;
     private static final int THIRTY = 2;
@@ -23,6 +22,12 @@ public class TennisGame {
         return currentScore(firstPlayerScore, secondPlayerScore, score);
     }
 
+    /**
+     *
+     * @param firstPlayerScore : điểm số của người chơi 1
+     * @return điểm số của người chơi thứ nhất theo cách gọi trong tennis
+     */
+
     public static String result(int firstPlayerScore) {
         switch (firstPlayerScore) {
             case LOVE:
@@ -38,6 +43,13 @@ public class TennisGame {
         }
     }
 
+    /**
+     *
+     * @param firstPlayerScore : điểm số của người chơi 1
+     * @param secondPlayerScore : điểm số của người chơi 2
+     * @return kết quả là adventage hoặc win
+     */
+
     public static String win(int firstPlayerScore, int secondPlayerScore) {
         int minusResult = firstPlayerScore - secondPlayerScore;
         if (minusResult == 1) {
@@ -50,6 +62,14 @@ public class TennisGame {
             return "Win for player2";
         }
     }
+
+    /**
+     *
+     * @param firstPlayerScore: điểm số của người chơi thứ nhất
+     * @param secondPlayerScore: điểm số của người chơi thứ hai
+     * @param score: điểm ghi được hiện tại
+     * @return: điểm ghi được hiện tại
+     */
 
     public static String currentScore(int firstPlayerScore, int secondPlayerScore, String score) {
         int tempScore = 0;
