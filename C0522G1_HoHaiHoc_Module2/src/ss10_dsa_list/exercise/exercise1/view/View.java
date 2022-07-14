@@ -11,7 +11,7 @@ public class View {
         Student student4 = new Student(4,"Bùi Hùng");
         Student student5 = new Student(5,"Võ Văn Tý");
         Student student6 = new Student(6,"Nguyễn Văn Phúc");
-        Student student7 = new Student(7,"Nguyễn Văn A");
+        //Student student7 = new Student(7,"Nguyễn Văn A");
 
 
 
