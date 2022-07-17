@@ -2,7 +2,7 @@ package ss11_dsa_stack_queue.exercise.brackets;
 
 import java.util.Scanner;
 
-import static ss11_dsa_stack_queue.exercise.brackets.Brackets.Bracket.checkBracket;
+import static ss11_dsa_stack_queue.exercise.brackets.Brackets.checkBracket;
 
 public class BracketsTest {
     public static void main(String[] args) {

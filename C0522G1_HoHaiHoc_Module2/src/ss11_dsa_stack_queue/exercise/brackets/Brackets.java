@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Brackets {
-    public class Bracket {
+
         public static boolean checkBracket(String string) {
             Stack<Character> characterStack = new Stack<>();
 
@@ -28,5 +28,5 @@ public class Brackets {
         }
 
 
-    }
+
 }

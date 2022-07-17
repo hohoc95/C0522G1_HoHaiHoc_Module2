@@ -18,4 +18,27 @@ public class CarClass  extends VehicleClass{
         this.vehicleType = vehicleType;
     }
 
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public String getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    @Override
+    public String toString() {
+        return "CarClass{" +
+                "numberOfSeats=" + numberOfSeats +
+                ", vehicleType='" + vehicleType + '\'' +
+                "} " + super.toString();
+    }
 }
