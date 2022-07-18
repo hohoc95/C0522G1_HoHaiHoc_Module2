@@ -58,11 +58,14 @@ public class ProductService implements IProductManager {
     @Override
     public void remove() {
         System.out.print("Nhập vào sản phẩm cần xóa: ");
-        String input = scanner.nextLine();
+//        String input = scanner.nextLine();
+        int input = Integer.parseInt(scanner.nextLine());
 
         for (Product product : productList) {
-            if (input.equals(product.getId())) {
-                System.out.print("Bạn có chắc muốn xoá hay không: \n" +
+//            if (input.equals(product.getId())) {
+            if (product.getId() == input) {
+
+                System.out.println("Bạn có chắc muốn xoá hay không: \n" +
                         "1. Có\n" +
                         "2. Không");
                 int choose = Integer.parseInt(scanner.nextLine());
@@ -74,6 +77,7 @@ public class ProductService implements IProductManager {
 
                 return;
             }
+
         }
 
         System.out.println("Không tìm thấy!");
