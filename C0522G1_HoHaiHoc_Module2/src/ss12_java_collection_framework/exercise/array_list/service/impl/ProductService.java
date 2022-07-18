@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class ProductService  implements IProductManager {
 
-    private List<Product> productList = new ArrayList<>();
+    private final List<Product> productList = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -88,16 +88,55 @@ public class ProductService  implements IProductManager {
 
     @Override
     public void findByName() {
+        System.out.println("Nhập tên sảm phẩm cầm tìm");
+        String name = scanner.nextLine();
+        boolean isFlag = false;
+        for (Product product : productList) {
+            if (name.equals(product.getProductName())) {
+                System.out.println(product);
+                isFlag = true;
+                break;
+            }
+        }
+        if (!isFlag) {
+            System.out.println("Không tìm thấy!");
+        }
+    }
+
+    @Override
+    public void sort() {
+        Scanner scanner = new Scanner(System.in);
+        IncreasingPrice increasingPrice = new IncreasingPrice();
+        DecreasingPrice decreasingPrice = new DecreasingPrice();
+        do {
+            System.out.println("Mời bạn chọn cách sắp xếp: \n" +
+                    "1.Sắp xếp tăng dần \n" +
+                    "2.Sắp xếp giảm dần \n" +
+                    "3.Quay trở lại menu ");
+            System.out.println("Mời bạn lựa chọn: ");
+
+            int choose = Integer.parseInt(scanner.nextLine());
+            switch (choose) {
+                case 1:
+                    productList.sort(increasingPrice);
+                case 2:
+                    productList.sort(decreasingPrice);
+                case 3:
+                    return;
+            }
+        } while (true);
 
     }
 
     @Override
     public void increasing() {
-
+        IncreasingPrice increasingPrice = new IncreasingPrice();
+        productList.sort(increasingPrice);
     }
 
     @Override
     public void decreasing() {
-
+        DecreasingPrice decreasingPrice = new DecreasingPrice();
+        productList.sort(decreasingPrice);
     }
 }

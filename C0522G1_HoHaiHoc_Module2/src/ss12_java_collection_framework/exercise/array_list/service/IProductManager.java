@@ -11,6 +11,8 @@ public interface IProductManager {
 
     void findByName();
 
+    void sort();
+
     void  increasing();
 
     void decreasing();

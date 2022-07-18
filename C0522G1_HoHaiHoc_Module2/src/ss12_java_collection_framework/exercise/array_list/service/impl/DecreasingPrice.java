@@ -1,4 +1,13 @@
 package ss12_java_collection_framework.exercise.array_list.service.impl;
 
-public class DecreasingPrice {
+import ss12_java_collection_framework.exercise.array_list.model.Product;
+
+import java.util.Comparator;
+
+public class DecreasingPrice implements Comparator<Product> {
+
+    @Override
+    public int compare(Product o1, Product o2) {
+        return (int) (o2.getPrice()-o1.getPrice());
+    }
 }
