@@ -8,23 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductService  implements IProductManager {
+public class ProductService implements IProductManager {
 
-    private final List<Product> productList = new ArrayList<>();
+    private final static List<Product> productList = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
+
+    static {
+        productList.add(new Product(1, "cocacola", 6000.0));
+        productList.add(new Product(2, "pepsi", 6000.0));
+        productList.add(new Product(3, "cà phê", 7000.0));
+        productList.add(new Product(4, "sữa", 10000.0));
+
+    }
 
     @Override
     public void add() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập vào tên sản phẩm: ");
-        String productName = scanner.nextLine();
         System.out.print("Nhập vào id: ");
         int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhập vào ngày sản xuất");
-        String dateOfManufacture = scanner.nextLine();
-        System.out.print("Nhập vào nhà sản xuất");
-        String producer = scanner.nextLine();
-        productList.add(new Product( productName,  id,  dateOfManufacture,  producer));
+        System.out.print("Nhập vào tên sản phẩm: ");
+        String productName = scanner.nextLine();
+        System.out.print("Nhập vào giá tiền: ");
+        double price = Double.parseDouble(scanner.nextLine());
+        productList.add(new Product(id, productName, price));
+        System.out.println("Thêm mới thành công.");
 
     }
 
@@ -32,8 +39,8 @@ public class ProductService  implements IProductManager {
     public void edit() {
         System.out.print("Nhập tên sản phẩm muốn thay đổi");
         String input = scanner.nextLine();
-        for (int i = 0; i < productList.size(); i++){
-            if(input.equals(productList.get(i).getId())){
+        for (int i = 0; i < productList.size(); i++) {
+            if (input.equals(productList.get(i).getId())) {
                 System.out.print("Sửa tên:");
                 String name = scanner.nextLine();
 
@@ -45,19 +52,16 @@ public class ProductService  implements IProductManager {
 
                 System.out.println("Chỉnh sửa thành công");
             }
-
-
         }
     }
 
     @Override
     public void remove() {
         System.out.print("Nhập vào sản phẩm cần xóa: ");
-        String productNumRemove = scanner.nextLine();
-        boolean isExit = false;
+        String input = scanner.nextLine();
 
         for (Product product : productList) {
-            if (productNumRemove.equals(product.getId())) {
+            if (input.equals(product.getId())) {
                 System.out.print("Bạn có chắc muốn xoá hay không: \n" +
                         "1. Có\n" +
                         "2. Không");
@@ -68,21 +72,19 @@ public class ProductService  implements IProductManager {
                     System.out.print("Đã xoá thành công!");
                 }
 
-                isExit = true;
-                break;
+                return;
             }
         }
-        if (!isExit) {
-            System.out.print("Không tìm thấy!");
 
-        }
+        System.out.println("Không tìm thấy!");
+
 
     }
 
     @Override
     public void displayList() {
         for (Product product : productList) {
-            System.out.print(product);
+            System.out.println(product);
         }
     }
 
@@ -109,7 +111,7 @@ public class ProductService  implements IProductManager {
         IncreasingPrice increasingPrice = new IncreasingPrice();
         DecreasingPrice decreasingPrice = new DecreasingPrice();
         do {
-            System.out.println("Mời bạn chọn cách sắp xếp: \n" +
+            System.out.println("Chọn cách sắp xếp: \n" +
                     "1.Sắp xếp tăng dần \n" +
                     "2.Sắp xếp giảm dần \n" +
                     "3.Quay trở lại menu ");

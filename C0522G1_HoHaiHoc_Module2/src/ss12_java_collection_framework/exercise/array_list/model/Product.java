@@ -1,20 +1,16 @@
 package ss12_java_collection_framework.exercise.array_list.model;
 
 public class Product {
-    private String productName;
     private int id;
-    private String dateOfManufacture;
-    private String producer;
+    private String productName;
     private double price;
 
-    public Product(int id, String name, double price){
+    public Product(){
     }
 
-    public Product(String productName, int id, String dateOfManufacture, String producer) {
+    public Product(int id, String productName, double price) {
         this.productName = productName;
         this.id = id;
-        this.dateOfManufacture = dateOfManufacture;
-        this.producer = producer;
         this.price = price;
     }
 
@@ -34,22 +30,6 @@ public class Product {
         this.id = id;
     }
 
-    public String getDateOfManufacture() {
-        return dateOfManufacture;
-    }
-
-    public void setDateOfManufacture(String dateOfManufacture) {
-        this.dateOfManufacture = dateOfManufacture;
-    }
-
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -61,10 +41,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product" +
-                "productName: '" + getProductName() + '\'' +
-                ", Id= " + getId() +
-                ", dateOfManufacture:'" + getDateOfManufacture() + '\'' +
-                ", producer: '" + getProducer() + '\'' +
-                ", price: '" + getPrice() + '\'';
+                " Id: " + getId() +
+                ", productName: '" + getProductName()  +
+                ", price: '" + getPrice() ;
     }
 }

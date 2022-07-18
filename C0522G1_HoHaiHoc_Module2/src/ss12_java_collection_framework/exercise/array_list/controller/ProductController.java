@@ -7,20 +7,18 @@ import ss12_java_collection_framework.exercise.array_list.service.impl.ProductSe
 import java.util.Scanner;
 
 public class ProductController {
-    private static final Scanner scanner = new Scanner(System.in);
-    private final IProductManager iProductManager = new ProductService();
-
-    public void menuController() {
+    public static void menuController() {
         Scanner scanner = new Scanner(System.in);
+        IProductManager iProductManager = new ProductService();
 
         do {
             System.out.print("CHƯƠNG TRÌNH QUẢN LÝ SẢN PHẨM \n" +
-                    "1. Thêm sản phẩm." +
-                    "2. Xóa sản phẩm." +
-                    "3. Chỉnh sửa sản phẩm." +
-                    "4. Hiển thị sản phẩm." +
-                    "5. Tìm kiếm sản phẩm." +
-                    "6. Sắp xếp sản phẩm." );
+                    "1. Thêm sản phẩm.\n" +
+                    "2. Xóa sản phẩm.\n" +
+                    "3. Chỉnh sửa sản phẩm.\n" +
+                    "4. Hiển thị sản phẩm.\n" +
+                    "5. Tìm kiếm sản phẩm.\n" +
+                    "6. Sắp xếp sản phẩm.\n" );
             System.out.print("Nhập vào lựa chọn: ");
 
             int choose = Integer.parseInt(scanner.nextLine());
