@@ -23,11 +23,5 @@ public class CountWord {
         }
 
         System.out.println(treeMap);
-
-        Set<String> stringSet = treeMap.keySet();
-        System.out.print("\nSố lần xuất hiện của mỗi từ trong chuỗi là: ");
-        for (String key : stringSet) {
-            System.out.print(key + ": " + treeMap.get(key));
-        }
     }
 }

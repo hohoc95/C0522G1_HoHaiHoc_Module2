@@ -10,7 +10,7 @@ public class Product {
     public Product(int id, String name, double price){
     }
 
-    public Product(String productName, int id, String dateOfManufacture, String producer, double price) {
+    public Product(String productName, int id, String dateOfManufacture, String producer) {
         this.productName = productName;
         this.id = id;
         this.dateOfManufacture = dateOfManufacture;
