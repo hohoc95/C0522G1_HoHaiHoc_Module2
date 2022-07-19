@@ -51,10 +51,10 @@ public abstract class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", gender=" + gender +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", dateOfBirth='" + getDateOfBirth() + '\'' +
+                ", gender=" + isGender() +
                 '}';
     }
 }

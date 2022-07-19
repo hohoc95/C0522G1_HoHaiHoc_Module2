@@ -49,6 +49,33 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void findById() {
+        System.out.print("Nhập vào Id cần tìm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < studentList.size(); i++) {
+            if (id == studentList.get(i).getId()){
+                System.out.println(studentList.get(i).toString());
+            }
+        }
+    }
+
+    @Override
+    public void findByName() {
+        System.out.println("Nhập vào tên cần tìm");
+        String name = scanner.nextLine();
+        boolean flag = false;
+        for (Student student : studentList) {
+            if (student.getName().contains(name)) {
+                System.out.println(student);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.err.println("không tìm thấy tên này!");
+        }
+    }
+
     public static Student infoStudent() {
         System.out.print("Nhập mã số: ");
         int id = Integer.parseInt(scanner.nextLine());
