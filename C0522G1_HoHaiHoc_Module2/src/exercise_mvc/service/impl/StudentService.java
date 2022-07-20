@@ -62,7 +62,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public void findByName() {
-        System.out.println("Nhập vào tên cần tìm");
+        System.out.println("Nhập vào tên cần tìm: ");
         String name = scanner.nextLine();
         boolean flag = false;
         for (Student student : studentList) {

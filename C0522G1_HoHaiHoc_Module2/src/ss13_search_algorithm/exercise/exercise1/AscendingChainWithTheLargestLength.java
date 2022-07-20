@@ -32,6 +32,5 @@ public class AscendingChainWithTheLargestLength {
         for (Character character: max) {
             System.out.print(character);
         }
-        System.out.println();
     }
 }
