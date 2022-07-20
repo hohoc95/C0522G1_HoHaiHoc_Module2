@@ -6,7 +6,7 @@ public class Teacher extends Person {
     public Teacher(){
     }
 
-    public Teacher(int id, String name, String dateOfBirth, boolean gender, String specialize) {
+    public Teacher(int id, String name, String dateOfBirth, String gender, String specialize) {
         super(id, name, dateOfBirth, gender);
         this.specialize = specialize;
     }
@@ -28,8 +28,10 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "specialize='" + getSpecialize() + '\'' +
-                "} " + super.toString();
+        return "Name: " + super.getName() +
+                ", id: " + super.getId() +
+                ", DateOfBirth: " + super.getDateOfBirth()+
+                ", gender: " + super.getGender() +
+                ", speciality: " + this.specialize;
     }
 }

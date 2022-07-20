@@ -4,12 +4,18 @@ import exercise_mvc.model.Student;
 import exercise_mvc.service.IStudentService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class StudentService implements IStudentService {
     private static List<Student> studentList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
+
+    static {
+        studentList.add(new Student(1,"Người Đi Trước","01/01/2000", "Nữ", "12", 8.0));
+        studentList.add(new Student(2,"Kẻ Theo Sau","01/01/1995", "Nam", "12", 7.5));
+    }
 
     public void addStudent() {
         Student student = infoStudent();
@@ -76,6 +82,24 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void sortByName() {
+        boolean isSwap = true;
+        for (int i = 0; i < studentList.size() && isSwap; i++) {
+            isSwap = false;
+
+            for (int j = 0; j < studentList.size()-1-i; j++) {
+                if (studentList.get(j).getName().compareTo(studentList.get(j+1).getName()) > 0){
+                    Collections.swap(studentList,j,j+1);
+                    isSwap = true;
+                }
+            }
+        }
+        for (int i = 0; i < studentList.size(); i++) {
+            System.out.println(studentList.get(i) + "\n");
+        }
+    }
+
     public static Student infoStudent() {
         System.out.print("Nhập mã số: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -87,7 +111,7 @@ public class StudentService implements IStudentService {
         String dateOfBirth = scanner.nextLine();
 
         System.out.print("Nhập giới tính: ");
-        boolean gender = Boolean.parseBoolean(scanner.nextLine());
+        String gender = scanner.nextLine();
 
         System.out.print("Nhập tên lớp: ");
         String nameClass = scanner.nextLine();

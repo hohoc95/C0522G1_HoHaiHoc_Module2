@@ -1,7 +1,7 @@
 package exercise_mvc.service;
 
 public interface IStudentService {
-    void  addStudent();
+    void addStudent();
 
     void displayAllStudent();
 
@@ -10,4 +10,6 @@ public interface IStudentService {
     void findById();
 
     void findByName();
+
+    void sortByName();
 }

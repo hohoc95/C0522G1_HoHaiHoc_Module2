@@ -1,9 +1,11 @@
 package exercise_mvc.service.impl;
 
+import exercise_mvc.model.Student;
 import exercise_mvc.model.Teacher;
 import exercise_mvc.service.ITeacherService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,6 +52,51 @@ public class TeacherService implements ITeacherService {
         }
     }
 
+    @Override
+    public void findById() {
+        System.out.print("Nhập vào Id cần tìm: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (id == teacherList.get(i).getId()){
+                System.out.println(teacherList.get(i).toString());
+            }
+        }
+    }
+
+    @Override
+    public void findByName() {
+        System.out.println("Nhập vào tên cần tìm: ");
+        String name = scanner.nextLine();
+        boolean flag = false;
+        for (Teacher teacher : teacherList) {
+            if (teacher.getName().contains(name)) {
+                System.out.println(teacher);
+                flag = true;
+            }
+        }
+        if (!flag){
+            System.err.println("không tìm thấy tên này!");
+        }
+    }
+
+    @Override
+    public void sortByName() {
+        boolean isSwap = true;
+        for (int i = 0; i < teacherList.size() && isSwap; i++) {
+            isSwap = false;
+
+            for (int j = 0; j < teacherList.size()-1-i; j++) {
+                if (teacherList.get(j).getName().compareTo(teacherList.get(j+1).getName()) > 0){
+                    Collections.swap(teacherList,j,j+1);
+                    isSwap = true;
+                }
+            }
+        }
+        for (int i = 0; i < teacherList.size(); i++) {
+            System.out.println(teacherList.get(i) + "\n");
+        }
+    }
+
     public static Teacher infoTeacher(){
         System.out.print("Nhập mã số: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -61,7 +108,7 @@ public class TeacherService implements ITeacherService {
         String dateOfBirth = scanner.nextLine();
 
         System.out.print("Nhập giới tính: ");
-        boolean gender = Boolean.parseBoolean(scanner.nextLine());
+        String gender = scanner.nextLine();
 
         System.out.print("Nhập chuyên môn: ");
         String specialize = scanner.nextLine();

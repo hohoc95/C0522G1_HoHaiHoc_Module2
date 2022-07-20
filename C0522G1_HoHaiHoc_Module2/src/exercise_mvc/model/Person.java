@@ -4,12 +4,12 @@ public abstract class Person {
     private int id;
     private String name;
     private String dateOfBirth;
-    private boolean gender;
+    private String gender;
 
     public Person(){
     }
 
-    public Person(int id, String name, String dateOfBirth, boolean gender){
+    public Person(int id, String name, String dateOfBirth, String gender){
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -40,21 +40,19 @@ public abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", dateOfBirth='" + getDateOfBirth() + '\'' +
-                ", gender=" + isGender() +
-                '}';
+        return "Name: " + getName() +
+                ", id: " + getId() +
+                ", DateOfBirth: " + getDateOfBirth() +
+                ", gender: " + getGender() + ".";
     }
 }

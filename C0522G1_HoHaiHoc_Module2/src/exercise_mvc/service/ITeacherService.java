@@ -6,4 +6,10 @@ public interface ITeacherService {
     void displayAllTeacher();
 
     void removeTeacher();
+
+    void findById();
+
+    void findByName();
+
+    void sortByName();
 }
