@@ -1,13 +1,14 @@
 package ss16_io_text_file.exercise.exercise1;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+
 
 public class FileCopy {
     public static List<String> readFile(String path) {
         List<String> list = new ArrayList<>();
-        File file = new File(path);
+        File file = new File (path);
         String line;
         int sum = 0;
 
