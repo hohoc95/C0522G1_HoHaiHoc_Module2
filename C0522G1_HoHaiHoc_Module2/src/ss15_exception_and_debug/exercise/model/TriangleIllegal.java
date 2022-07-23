@@ -10,7 +10,7 @@ public class TriangleIllegal {
     public TriangleIllegal(){
     }
 
-    public TriangleIllegal(int firstEdge, int secondEdge, int thirdEdge){
+    public TriangleIllegal(int firstEdge, int secondEdge, int thirdEdge) throws TriangleIllegalException{
         if(firstEdge <= 0 || secondEdge <= 0 || thirdEdge <= 0){
             try {
                 throw new TriangleIllegalException("Cạnh tam giác phải lớn hơn 0.");

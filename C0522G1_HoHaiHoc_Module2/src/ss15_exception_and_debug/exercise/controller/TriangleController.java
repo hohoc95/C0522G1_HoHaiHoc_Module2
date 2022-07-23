@@ -30,12 +30,9 @@ public class TriangleController {
             catch (NumberFormatException e){
                 System.out.println("Nhập sai kiểu dữ liệu!");
             }
-//            catch (TriangleIllegalException e){
-//                System.out.println("ffhghf");
-//            }
-
-
+            catch (TriangleIllegalException e){
+                System.out.println("ffhghf");
+            }
         }
     }
-
 }
