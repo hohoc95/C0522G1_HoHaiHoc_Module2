@@ -5,17 +5,16 @@ import ss17_binary_file_serialization.exercise.exercise1.service.IProductService
 import ss17_binary_file_serialization.exercise.exercise1.utils.DuplicateIDException;
 import ss17_binary_file_serialization.exercise.exercise1.utils.ReadWriteFileUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
     private static Scanner scanner = new Scanner(System.in);
-    private static final String path = "src/ss17_binary_file_serialization/exercise/data/data.dat";
+    private static final String PATH = "src/ss17_binary_file_serialization/exercise/exercise1/data/data.dat";
 
     @Override
     public void add() {
-        List<Product> productList = ReadWriteFileUtils.readDataFromFile(path);
+        List<Product> productList = ReadWriteFileUtils.readDataFromFile(PATH);
 
         int id;
         while (true) {
@@ -55,13 +54,13 @@ public class ProductService implements IProductService {
         }
 
         productList.add(new Product(id, name, manufacturer, price));
-        ReadWriteFileUtils.writeDataFromFile(path, productList);
+        ReadWriteFileUtils.writeDataFromFile(PATH, productList);
         System.out.println("Thêm mới thành công!");
     }
 
     @Override
     public void displayMenu() {
-        List<Product> productList = ReadWriteFileUtils.readDataFromFile(path);
+        List<Product> productList = ReadWriteFileUtils.readDataFromFile(PATH);
         System.out.print("Danh sách sản phẩm.");
         for (Product product : productList){
             System.out.println(product);
@@ -70,7 +69,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void findByName() {
-        List<Product> productList = ReadWriteFileUtils.readDataFromFile(path);
+        List<Product> productList = ReadWriteFileUtils.readDataFromFile(PATH);
 
         System.out.print("Nhập tên sảm phẩm cầm tìm: ");
         String name = scanner.nextLine();
@@ -91,7 +90,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void findById() {
-        List<Product> productList = ReadWriteFileUtils.readDataFromFile(path);
+        List<Product> productList = ReadWriteFileUtils.readDataFromFile(PATH);
 
         System.out.print("Nhập vào Id cần tìm: ");
         int id = Integer.parseInt(scanner.nextLine());

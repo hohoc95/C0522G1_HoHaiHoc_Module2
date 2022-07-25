@@ -15,6 +15,7 @@ public class ReadWriteFileUtils {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
             productList = (List<Product>) objectInputStream.readObject();
+            fileInputStream.close();
             objectInputStream.close();
         }
         catch (Exception e){
@@ -26,8 +27,8 @@ public class ReadWriteFileUtils {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(path);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-
             objectOutputStream.writeObject(productList);
+
             objectOutputStream.close();
             fileOutputStream.close();
         }
