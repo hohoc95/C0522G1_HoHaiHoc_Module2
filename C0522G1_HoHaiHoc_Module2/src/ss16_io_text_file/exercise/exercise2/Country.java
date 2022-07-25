@@ -38,9 +38,9 @@ public class Country {
         this.name = name;
     }
 
-//    public String getInfo() {
-//        return String.format("%s,%s,%s\n", this.getId(), this.getCode(), this.getName());
-//    }
+    public String getInfo() {
+        return String.format("%s,%s,%s\n", this.getId(), this.getCode(), this.getName());
+    }
 
     @Override
     public String toString() {
