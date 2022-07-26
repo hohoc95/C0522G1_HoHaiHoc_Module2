@@ -6,10 +6,9 @@ import exercise_mvc.service.impl.StudentService;
 import java.util.Scanner;
 
 public class StudentController {
-    private Scanner scanner = new Scanner(System.in);
-    private IStudentService iStudentService = new StudentService();
-
     public void menuStudent() {
+        Scanner scanner = new Scanner(System.in);
+        IStudentService iStudentService = new StudentService();
         do {
             System.out.println("1. Thêm mới học sinh \n" +
                     "2. Xóa học sinh \n" +
@@ -18,7 +17,14 @@ public class StudentController {
                     "5. Tìm học sinh theo tên \n" +
                     "6. Sắp xếp danh sách \n" +
                     "7. Quay về menu chính.");
-            int choose = Integer.parseInt(scanner.nextLine());
+            int choose = 0;
+            try {
+                System.out.print("Nhập vào lựa chọn: ");
+                choose = Integer.parseInt(scanner.nextLine());
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Hãy nhập chữ số.");
+            }
             switch (choose){
                 case 1:
                     iStudentService.addStudent();
@@ -40,6 +46,8 @@ public class StudentController {
                     break;
                 case 7:
                     return;
+                default:
+                    System.out.println("Nhập lại lựa chọn");
             }
         }while (true);
     }
