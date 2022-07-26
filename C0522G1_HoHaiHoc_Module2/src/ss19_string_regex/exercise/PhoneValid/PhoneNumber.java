@@ -1,21 +1,20 @@
-package ss18_string_regex.exercise.ClassName;
+package ss19_string_regex.exercise.PhoneValid;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ClassName {
+public class PhoneNumber {
     private static Pattern pattern;
     private Matcher matcher;
 
-    private static final String CLASS_REGEX = "^[C|A|P][0-9]{4}[GHIKLM]";
+    private static final String PHONE_NUMBER = "[(][0-9]{2}[)][-][(][0][0-9]{9}[)]";
 
-    public ClassName(){
-        pattern = Pattern.compile(CLASS_REGEX);
+    public PhoneNumber(){
+        pattern = Pattern.compile(PHONE_NUMBER);
     }
 
     public boolean validate (String regex){
         matcher = pattern.matcher(regex);
         return matcher.matches();
     }
-
 }

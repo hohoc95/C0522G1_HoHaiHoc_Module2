@@ -1,4 +1,4 @@
-package ss18_string_regex.exercise.ClassName;
+package ss19_string_regex.exercise.ClassName;
 
 public class ClassNameTest {
     private static ClassName className;

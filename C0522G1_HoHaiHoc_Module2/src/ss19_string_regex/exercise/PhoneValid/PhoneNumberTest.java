@@ -1,4 +1,4 @@
-package ss18_string_regex.exercise.PhoneValid;
+package ss19_string_regex.exercise.PhoneValid;
 
 public class PhoneNumberTest {
     private static PhoneNumber phoneNumber;

@@ -1,4 +1,4 @@
-package ss18_string_regex.practice.practice1;
+package ss19_string_regex.practice.practice1;
 
 public class EmailExampleTest {
     private static EmailExample emailExample;
