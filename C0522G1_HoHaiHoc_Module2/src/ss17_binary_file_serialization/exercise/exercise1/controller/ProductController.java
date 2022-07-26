@@ -15,7 +15,7 @@ public class ProductController {
         productList.add(new Product(1, "Bánh gạo", "Ichi", 5000));
         productList.add(new Product(2, "Bánh gạo", "OneOne", 5000));
 
-        ReadWriteFileUtils.writeDataFromFile("src/ss17_binary_file_serialization/exercise/exercise1/data/data.dat",productList);
+        ReadWriteFileUtils.writeDataFromFile("C0522G1_HoHaiHoc_Module2/src/ss17_binary_file_serialization/exercise/exercise1/data/data.dat",productList);
 
         Scanner scanner = new Scanner(System.in);
         IProductService iProductService = new ProductService();

@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class ProductService implements IProductService {
     private static Scanner scanner = new Scanner(System.in);
-    private static final String PATH = "src/ss17_binary_file_serialization/exercise/exercise1/data/data.dat";
+    private static final String PATH = "C0522G1_HoHaiHoc_Module2/src/ss17_binary_file_serialization/exercise/exercise1/data/data.dat";
 
     @Override
     public void add() {
@@ -61,7 +61,7 @@ public class ProductService implements IProductService {
     @Override
     public void displayMenu() {
         List<Product> productList = ReadWriteFileUtils.readDataFromFile(PATH);
-        System.out.print("Danh sách sản phẩm.");
+        System.out.print("Danh sách sản phẩm.\n");
         for (Product product : productList){
             System.out.println(product);
         }
