@@ -15,7 +15,14 @@ public class MainController {
                     "3. Thoát.\n" +
                     "Chọn chức năng:");
             System.out.print("Nhập lựa chọn: ");
-            int choose = Integer.parseInt(scanner.nextLine());
+            int choose = 0;
+            try {
+                System.out.print("Mời bạn nhập lựa chọn: ");
+                choose = Integer.parseInt(scanner.nextLine());
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập số!");
+            }
             switch (choose){
                 case 1:{
                     teacherController.menuTeacher();
@@ -28,8 +35,8 @@ public class MainController {
                 case 3:{
                     System.exit(1);
                 }
-
-
+                default:
+                    System.out.println("Nhập lại lựa chọn");
             }
 
         }while (true);
