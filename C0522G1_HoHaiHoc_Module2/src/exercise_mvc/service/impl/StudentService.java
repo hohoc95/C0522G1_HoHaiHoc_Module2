@@ -4,6 +4,7 @@ import exercise_mvc.model.Student;
 import exercise_mvc.service.IStudentService;
 import exercise_mvc.exception.DuplicateIDException;
 import exercise_mvc.utils.ReadFile;
+import exercise_mvc.utils.Util;
 import exercise_mvc.utils.WriteFile;
 
 
@@ -151,14 +152,11 @@ public class StudentService implements IStudentService {
             }
         }
 
-        System.out.print("Nhập tên: ");
-        String name = scanner.nextLine();
+        String name = Util.getName();
 
-        System.out.print("Nhập ngày sinh: ");
-        String dateOfBirth = scanner.nextLine();
+        String dateOfBirth = Util.getDateOfBirth();
 
-        System.out.print("Nhập giới tính: ");
-        String gender = scanner.nextLine();
+        String gender = Util.getGender();
 
         System.out.print("Nhập tên lớp: ");
         String nameClass = scanner.nextLine();

@@ -1,17 +1,18 @@
-package exercise_mvc.utils;
+package case_study.utils;
 
-import exercise_mvc.exception.DateException;
+import case_study.exception.DateException;
+import case_study.exception.EmailFormatException;
 
 import java.util.Scanner;
 
-public class Util {
+public class Utils {
     private static Scanner scanner = new Scanner(System.in);
 
     public static String getGender() {
-        System.out.println("Nhập giới tính:\n" +
-                "1. Nam\n" +
-                "2. Nữ\n" +
-                "3. Giới tính thứ ba");
+        System.out.println("Enter gender:\n" +
+                "1. Male\n" +
+                "2. Female\n" +
+                "3. LGBT");
 
         do {
             int choice;
@@ -20,24 +21,24 @@ public class Util {
                     choice = Integer.parseInt(scanner.nextLine());
                     break;
                 } catch (NumberFormatException e) {
-                    System.err.println("vui lòng nhập số");
+                    System.err.println("pls, enter number");
                 }
             }
             switch (choice) {
                 case 1:
-                    return "Nam";
+                    return "Male";
                 case 2:
-                    return "Nữ";
+                    return "Female";
                 case 3:
-                    return "giới tính thứ 3.";
+                    return "LGBT.";
                 default:
-                    System.err.println("Không có lựa chọn này, nhập lại lựa chọn!");
+                    System.err.println("Without this selection, re-enter the selection!");
             }
         } while (true);
     }
 
     public static String getName(){
-        System.out.println("Nhập tên:");
+        System.out.println("Enter name:");
         String name = scanner.nextLine();
         String[] array = name.toLowerCase().trim().split("");
         StringBuilder stringBuilder = new StringBuilder().append(array[0].toUpperCase());
@@ -67,25 +68,25 @@ public class Util {
         String dateOfBirth;
         while (true){
             try {
-                System.out.println("Nhập ngáy sinh: ");
+                System.out.println("Enter day of birth: ");
                 dateOfBirth = scanner.nextLine();
                 if (!dateOfBirth.matches("(0[1-9]|[12]\\d|3[0-1])/(0[1-9]|1[0-2])/(19\\d{2}|20(0\\d|1\\d))")){
-                    throw new DateException("Vui lòng nhập đúng định dạng dd/mm/yyyy!");
+                    throw new DateException("Please enter the correct format\n dd/mm/yyyy!");
                 }
 
                 String[] strings = dateOfBirth.split("/");
                 if (strings[1].equals("04") || strings[1].equals("06") || strings[1].equals("09") || strings[1].equals("11")){
                     if (Integer.parseInt(strings[0]) > 30){
-                        throw new DateException("Vui lòng nhập đúng số ngày trong tháng (tháng này có tối đa 30 ngày)!");
+                        throw new DateException("Please enter the correct number of days in the month (this month has a maximum of 30 days)!");
                     }
                 } else if (strings[1].equals("02")){
                     if (isLeapYear(Integer.parseInt(strings[2]))){
                         if (Integer.parseInt(strings[0]) > 29){
-                            throw new DateException("Vui lòng nhập đúng số ngày trong tháng (tháng 2 có tối đa 29 ngày vì là năm nhuận)!");
+                            throw new DateException("Please enter the correct number of days in the month (February has a maximum of 29 days because it is a leap year)!");
                         }
                     } else {
                         if (Integer.parseInt(strings[0])>28){
-                            throw new DateException("Vui lòng nhập đúng số ngày trong tháng (tháng 2 có tối đa 28 ngày)!");
+                            throw new DateException("Please enter the correct number of days in the month (February has a maximum of 28 days)!");
                         }
                     }
                 }
@@ -96,4 +97,21 @@ public class Util {
             }
         }
     }
+    public static String getEmail(){
+        String email;
+        while (true){
+            try{
+                System.out.println("Enter your email: ");
+                email = scanner.nextLine();
+                if(!email.matches("^([.A-Za-z0-9]+){1,2}+@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+){1,2}$")){
+                    throw new EmailFormatException("Please enter the correct email");
+                }
+                return email;
+            }
+            catch (EmailFormatException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
 }
