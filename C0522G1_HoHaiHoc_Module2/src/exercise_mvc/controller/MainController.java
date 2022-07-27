@@ -9,15 +9,12 @@ public class MainController {
         Scanner scanner = new Scanner(System.in);
         do{
             System.out.print("-CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN- \n" +
-                    "Chọn chức năng theo số(để tiếp tục).\n" +
                     "1. Quản lý giảng viên .\n" +
                     "2. Quản lý học sinh.\n" +
-                    "3. Thoát.\n" +
-                    "Chọn chức năng:");
-            System.out.print("Nhập lựa chọn: ");
+                    "3. Thoát.\n");
             int choose = 0;
             try {
-                System.out.print("Mời bạn nhập lựa chọn: ");
+                System.out.print("Nhập lựa chọn: ");
                 choose = Integer.parseInt(scanner.nextLine());
             }
             catch (NumberFormatException e) {

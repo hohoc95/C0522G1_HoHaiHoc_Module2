@@ -2,10 +2,9 @@ package case_study.controller;
 
 import java.util.Scanner;
 
-public class FurumaController {
+public class FuramaController {
     public static void menuController(){
         Scanner scanner = new Scanner(System.in);
-        int choice;
 
         EmployeeManagementController employeeManagementController = new EmployeeManagementController();
         CustomerManagementController customerManagementController = new CustomerManagementController();
@@ -14,7 +13,8 @@ public class FurumaController {
         PromotionManagementController promotionManagementController = new PromotionManagementController();
 
         do {
-            System.out.println("Furuma\n" +
+            int choice;
+            System.out.println("Furama\n" +
                     "1.Employee Management\n" +
                     "2.Customer Management\n" +
                     "3.Facility Management \n" +
@@ -27,11 +27,23 @@ public class FurumaController {
 
             switch (choice){
                 case 1:
+                    employeeManagementController.employeeManagement();
+                    break;
                 case 2:
+                    customerManagementController.customerManagement();
+                    break;
                 case 3:
+                    facilityManagementController.facilityManagement();
+                    break;
                 case 4:
+                    bookingManagementController.bookingManagement();
+                    break;
                 case 5:
-                case 6: System.exit(1);
+                    promotionManagementController.promotionManagement();
+                    break;
+                case 6: System.exit(0);
+                default:
+                    System.err.println("The number you entered is incorrect, please re-enter");
             }
         }
         while (true);

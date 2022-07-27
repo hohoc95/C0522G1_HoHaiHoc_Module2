@@ -2,7 +2,7 @@ package exercise_mvc.service.impl;
 
 import exercise_mvc.model.Teacher;
 import exercise_mvc.service.ITeacherService;
-import exercise_mvc.utils.DuplicateIDException;
+import exercise_mvc.exception.DuplicateIDException;
 import exercise_mvc.utils.ReadFile;
 import exercise_mvc.utils.WriteFile;
 
@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class TeacherService implements ITeacherService {
     private static List<Teacher> teacherList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
-    private static final String PATH = "src/exercise_mvc/data/teacher.csv";
+    private static final String PATH = "C0522G1_HoHaiHoc_Module2/src/exercise_mvc/data/teacher.csv";
 
     public void writeFile(){
         WriteFile.writeTeacherFile(PATH, teacherList);

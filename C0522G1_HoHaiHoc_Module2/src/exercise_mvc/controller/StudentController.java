@@ -18,6 +18,8 @@ public class StudentController {
                     "6. Sắp xếp danh sách \n" +
                     "7. Quay về menu chính.");
             int choose = 0;
+            choose = Integer.parseInt(scanner.nextLine());
+
             try {
                 System.out.print("Nhập vào lựa chọn: ");
                 choose = Integer.parseInt(scanner.nextLine());

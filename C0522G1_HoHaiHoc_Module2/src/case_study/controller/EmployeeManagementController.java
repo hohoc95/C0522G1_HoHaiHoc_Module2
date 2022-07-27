@@ -6,8 +6,8 @@ public class EmployeeManagementController {
     private Scanner scanner = new Scanner(System.in);
 
     public void employeeManagement(){
-        int choice;
         do {
+            int choice;
             System.out.println("1\tDisplay list employees\n" +
                     "2\tAdd new employee\n" +
                     "3\tEdit employee\n" +
