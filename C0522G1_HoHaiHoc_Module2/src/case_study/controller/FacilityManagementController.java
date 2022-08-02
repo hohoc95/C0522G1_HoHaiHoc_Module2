@@ -1,26 +1,40 @@
 package case_study.controller;
 
+import case_study.service.IFacilityService;
+import case_study.service.impl.FacilityService;
+
 import java.util.Scanner;
 
 public class FacilityManagementController {
-    private Scanner scanner = new Scanner(System.in);
-
     public void facilityManagement(){
+        Scanner scanner = new Scanner(System.in);
+        IFacilityService iFacilityService = new FacilityService();
         do {
-            int choice;
-            System.out.print("1\tDisplay list facility\n" +
-                    "2\tAdd new facility\n" +
-                    "3\tDisplay list facility maintenance\n" +
-                    "4\tReturn main menu\n");
+            int choice = 0;
+            System.out.print("1\tHiển thị danh sách cơ sở\n" +
+                    "2\tThêm mới cơ sở\n" +
+                    "3\tTrở về menu chính\n");
 
-            System.out.print("You choice: ");
-            choice = Integer.parseInt(scanner.nextLine());
+            try{
+                System.out.print("Lựa chọn của bạn: ");
+                choice = Integer.parseInt(scanner.nextLine());
+            }
+            catch (NumberFormatException e){
+                System.out.println("Hãy nhập kiểu số");
+                e.printStackTrace();
+            }
 
             switch (choice){
                 case 1:
+                    iFacilityService.displayList();
+                    break;
                 case 2:
+                    iFacilityService.add();
+                    break;
                 case 3:
-                case 4: return;
+                    return;
+                default:
+                    System.out.println("Số bạn vừa nhập không đúng, hãy nhập lại");
             }
 
         }while (true);

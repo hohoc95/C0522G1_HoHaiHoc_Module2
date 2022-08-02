@@ -4,6 +4,4 @@ public interface IFacilityService {
     void displayList();
 
     void add();
-
-    void edit();
 }

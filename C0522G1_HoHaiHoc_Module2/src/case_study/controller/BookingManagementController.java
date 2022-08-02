@@ -21,9 +21,19 @@ public class BookingManagementController {
 
             switch (choice){
                 case 1:
+                    break;
                 case 2:
+                    break;
                 case 3:
-                case 4: return;
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    return;
+                default:
+                    System.out.println("The number you entered is not correct, please re-enter");
             }
 
         }while (true);

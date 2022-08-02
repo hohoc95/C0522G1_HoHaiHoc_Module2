@@ -2,15 +2,16 @@ package case_study.model;
 
 public class House extends Facility{
     private String roomStandard;
-    private int floors;
+    private int floor;
 
     public House(){
     }
 
-    public House(String nameService, double usabeArea, double rentalCosts, int maximumPeople, String leaseType, String roomStandard, int floors) {
-        super(nameService, usabeArea, rentalCosts, maximumPeople, leaseType);
+    public House(String serviceCode, String nameService, double usabeArea, double rentalCosts, int maximumPeople,
+                 String leaseType, String roomStandard, int floor) {
+        super(serviceCode, nameService, usabeArea, rentalCosts, maximumPeople, leaseType);
         this.roomStandard = roomStandard;
-        this.floors = floors;
+        this.floor = floor;
     }
 
     public String getRoomStandard() {
@@ -21,23 +22,24 @@ public class House extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public int getFloors() {
-        return floors;
+    public int getFloor() {
+        return floor;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
+    public void setFloor(int floor) {
+        this.floor = floor;
     }
 
     public String getInfo(){
-        return String.format("%s,%s,%s,%s,%s,%s,%s\n", this.getNameService(), this.getUsabeArea(), this.getRentalCosts(), this.getMaximumPeople(), this.getLeaseType(), this.getRoomStandard(),this.getFloors());
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s",this.getServiceCode(),this.getNameService(),
+                this.getUsabeArea(), this.getRentalCosts(), this.getMaximumPeople(), this.getLeaseType(),
+                this.getRoomStandard(), this.getFloor());
     }
 
     @Override
     public String toString() {
-        return "House: " +
-                "roomStandard='" + roomStandard +
-                ", floors=" + floors +
-                super.toString();
+        return "House: " + super.toString() +
+                ", roomStandard: " + roomStandard +
+                ", floors: " + floor;
     }
 }

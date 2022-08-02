@@ -1,26 +1,44 @@
 package case_study.controller;
 
+import case_study.service.IEmployeeService;
+import case_study.service.impl.EmployeeService;
+
 import java.util.Scanner;
 
 public class EmployeeManagementController {
-    private Scanner scanner = new Scanner(System.in);
-
     public void employeeManagement(){
+        Scanner scanner = new Scanner(System.in);
+        IEmployeeService iEmployeeService = new EmployeeService();
         do {
-            int choice;
-            System.out.println("1\tDisplay list employees\n" +
-                    "2\tAdd new employee\n" +
-                    "3\tEdit employee\n" +
-                    "4\tReturn main menu\n");
+            int choice = 0;
+            System.out.println("1.\tDanh sách nhân viên\n" +
+                    "2.\tThêm mới nhân viên\n" +
+                    "3.\tChỉnh sửa nhân viên\n" +
+                    "4.\tTrở về menu chính\n");
 
-            System.out.print("You choice: ");
-            choice = Integer.parseInt(scanner.nextLine());
+            try{
+                System.out.print("Nhập vào lựa chọn của bạn: ");
+                choice = Integer.parseInt(scanner.nextLine());
+            }
+            catch (NumberFormatException e){
+                System.out.println("Hãy nhập kiểu số");
+                e.printStackTrace();
+            }
 
             switch (choice){
                 case 1:
+                    iEmployeeService.displayList();
+                    break;
                 case 2:
+                    iEmployeeService.add();
+                    break;
                 case 3:
-                case 4: return;
+                    iEmployeeService.edit();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Số bạn vừa nhập không đúng, hãy nhập lại.");
             }
         }
         while (true);

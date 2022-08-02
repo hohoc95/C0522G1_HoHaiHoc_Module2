@@ -1,6 +1,5 @@
 package case_study.utils;
 
-import case_study.exception.DateException;
 import case_study.exception.EmailFormatException;
 
 import java.util.Scanner;
@@ -9,9 +8,9 @@ public class Utils {
     private static Scanner scanner = new Scanner(System.in);
 
     public static String getGender() {
-        System.out.println("Enter gender:\n" +
-                "1. Male\n" +
-                "2. Female\n" +
+        System.out.println("Nhập vào giới tính:\n" +
+                "1. Nam\n" +
+                "2. Nữ\n" +
                 "3. LGBT");
 
         do {
@@ -21,24 +20,24 @@ public class Utils {
                     choice = Integer.parseInt(scanner.nextLine());
                     break;
                 } catch (NumberFormatException e) {
-                    System.err.println("pls, enter number");
+                    System.err.println("vui lòng nhập số");
                 }
             }
             switch (choice) {
                 case 1:
-                    return "Male";
+                    return "Nam";
                 case 2:
-                    return "Female";
+                    return "Nữ";
                 case 3:
                     return "LGBT.";
                 default:
-                    System.err.println("Without this selection, re-enter the selection!");
+                    System.err.println("Lựa chọn vừa nhập không có, hãy nhập lại!");
             }
         } while (true);
     }
 
     public static String getName(){
-        System.out.println("Enter name:");
+        System.out.println("Nhập tên:");
         String name = scanner.nextLine();
         String[] array = name.toLowerCase().trim().split("");
         StringBuilder stringBuilder = new StringBuilder().append(array[0].toUpperCase());
@@ -53,65 +52,140 @@ public class Utils {
                 stringBuilder.append(array[i]);
             }
         }
-        return array.toString();
+        return stringBuilder.toString();
     }
 
-    private static boolean isLeapYear(int year){
-        boolean isDivisible4 = year % 4 == 0;
-        boolean isDivisible100 = year % 100 == 0;
-        boolean isDivisible400 = year % 400 == 0;
+    public static String getPoisition() {
+        System.out.println("Nhập vào chức vụ:\n" +
+                "1. Receptionist\n" +
+                "2. Waiter\n" +
+                "3. Specialist" +
+                "4. Supervisor\n" +
+                "5. Manager\n" +
+                "6. Director");
 
-        return (isDivisible4 && isDivisible100) || isDivisible400;
+        do {
+            int choice;
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.err.println("vui lòng nhập số");
+                }
+            }
+            switch (choice) {
+                case 1:
+                    return "Receptionist";
+                case 2:
+                    return "Waiter";
+                case 3:
+                    return "Specialist";
+                case 4:
+                    return "Supervisor";
+                case 5:
+                    return "Manager";
+                case 6:
+                    return "Director";
+                default:
+                    System.err.println("Lựa chọn không đúng, vui lòng chọn lại!");
+            }
+        } while (true);
     }
 
-    public static String getDateOfBirth(){
-        String dateOfBirth;
-        while (true){
+    public static String getLevel() {
+        System.out.println("Nhập vào cấp bậc:\n" +
+                "1. Intermediate\n" +
+                "2. College\n" +
+                "3. University\n"+
+                "4. After university.");
+
+        do {
+            int choice;
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.err.println("vui lòng nhập số");
+                }
+            }
+            switch (choice) {
+                case 1:
+                    return "Intermediate.";
+                case 2:
+                    return "College.";
+                case 3:
+                    return "University.";
+                case 4:
+                    return "After university.";
+                default:
+                    System.err.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
+            }
+        } while (true);
+    }
+
+    public static String getKindOfCustomer() {
+        System.out.println("Nhập vào loại khách hàng:\n" +
+                "1. Diamond\n" +
+                "2. Platinium\n" +
+                "3. Gold\n"+
+                "4. Silver\n"+
+                "5. Member.");
+
+        do {
+            int choice;
+            while (true) {
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                } catch (NumberFormatException e) {
+                    System.err.println("vui lòng nhập số");
+                }
+            }
+            switch (choice) {
+                case 1:
+                    return "Diamond.";
+                case 2:
+                    return "Platinium.";
+                case 3:
+                    return "Gold.";
+                case 4:
+                    return "Silver.";
+                case 5:
+                    return "Member.";
+                default:
+                    System.err.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
+            }
+        } while (true);
+    }
+    public static String getLeaseType() {
+        System.out.println("Nhập vào kiểu thuê:\n" +
+                "1. Thuê theo năm.\n" +
+                "2. Thuê theo tháng.\n" +
+                "3. Thuê theo ngày.\n" +
+                "4. Thuê theo giờ.");
+        int choose = 0;
+        do {
             try {
-                System.out.println("Enter day of birth: ");
-                dateOfBirth = scanner.nextLine();
-                if (!dateOfBirth.matches("(0[1-9]|[12]\\d|3[0-1])/(0[1-9]|1[0-2])/(19\\d{2}|20(0\\d|1\\d))")){
-                    throw new DateException("Please enter the correct format\n dd/mm/yyyy!");
-                }
-
-                String[] strings = dateOfBirth.split("/");
-                if (strings[1].equals("04") || strings[1].equals("06") || strings[1].equals("09") || strings[1].equals("11")){
-                    if (Integer.parseInt(strings[0]) > 30){
-                        throw new DateException("Please enter the correct number of days in the month (this month has a maximum of 30 days)!");
-                    }
-                } else if (strings[1].equals("02")){
-                    if (isLeapYear(Integer.parseInt(strings[2]))){
-                        if (Integer.parseInt(strings[0]) > 29){
-                            throw new DateException("Please enter the correct number of days in the month (February has a maximum of 29 days because it is a leap year)!");
-                        }
-                    } else {
-                        if (Integer.parseInt(strings[0])>28){
-                            throw new DateException("Please enter the correct number of days in the month (February has a maximum of 28 days)!");
-                        }
-                    }
-                }
-
-                return dateOfBirth;
-            } catch (DateException e) {
-                System.out.println(e.getMessage());
+                choose = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                e.getStackTrace();
             }
-        }
+            switch (choose) {
+                case 1:
+                    return "Năm";
+                case 2:
+                    return "Tháng";
+                case 3:
+                    return "Ngày";
+                case 4:
+                    return "Giờ";
+                default:
+                    System.out.println("Lựa chọn của bạn không tồn tại, vui lòng nhập lại!");
+            }
+        } while (true);
     }
-    public static String getEmail(){
-        String email;
-        while (true){
-            try{
-                System.out.println("Enter your email: ");
-                email = scanner.nextLine();
-                if(!email.matches("^([.A-Za-z0-9]+){1,2}+@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+){1,2}$")){
-                    throw new EmailFormatException("Please enter the correct email");
-                }
-                return email;
-            }
-            catch (EmailFormatException e){
-                System.out.println(e.getMessage());
-            }
-        }
-    }
+
 
 }

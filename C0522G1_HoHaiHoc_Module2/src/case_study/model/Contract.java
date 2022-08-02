@@ -10,7 +10,8 @@ public class Contract {
     public Contract(){
     }
 
-    public Contract(String contractNumber, String bookingCode, String depositAmount, String totalPayment, String customerCode) {
+    public Contract(String contractNumber, String bookingCode, String depositAmount,
+                    String totalPayment, String customerCode) {
         this.contractNumber = contractNumber;
         this.bookingCode = bookingCode;
         this.depositAmount = depositAmount;

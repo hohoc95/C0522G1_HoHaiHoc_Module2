@@ -17,9 +17,13 @@ public class PromotionManagementController {
 
             switch (choice){
                 case 1:
+                    break;
                 case 2:
+                    break;
                 case 3:
-                case 4: return;
+                    return;
+                default:
+                    System.out.println("The number you entered is not correct, please re-enter");
             }
         }
         while (true);

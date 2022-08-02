@@ -14,15 +14,15 @@ public class FuramaController {
 
         do {
             int choice;
-            System.out.println("Furama\n" +
-                    "1.Employee Management\n" +
-                    "2.Customer Management\n" +
-                    "3.Facility Management \n" +
-                    "4.Booking Management\n" +
-                    "5.Promotion Management\n" +
+            System.out.println("Hệ thống quản lý Furama\n" +
+                    "1.Quản lý nhân sự\n" +
+                    "2.Quản lý khách hàng\n" +
+                    "3.Quản lý cơ sở \n" +
+                    "4.Quản lý đặt chổ (booking)\n" +
+                    "5.Quản lý thăng hạng (promotion)\n" +
                     "6.Exit\n");
 
-            System.out.print("You choice: ");
+            System.out.print("Lựa chọn của bạn: ");
             choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice){
@@ -41,9 +41,10 @@ public class FuramaController {
                 case 5:
                     promotionManagementController.promotionManagement();
                     break;
-                case 6: System.exit(0);
+                case 6:
+                    System.exit(0);
                 default:
-                    System.err.println("The number you entered is incorrect, please re-enter");
+                    System.err.println("Số bạn vừa nhập không đúng, hãy nhập lại.");
             }
         }
         while (true);
